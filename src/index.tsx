@@ -1,11 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
+import Dashboard from './pages/Dashboard';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import './styles.css';
+
+const client = new QueryClient();
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <QueryClientProvider client={client}>
+    <Dashboard />
+  </QueryClientProvider>,
+
   document.getElementById('root')
 );
